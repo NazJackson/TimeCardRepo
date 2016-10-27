@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
  * Created by nazhirjackson on 10/26/16.
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:9000/")
+@CrossOrigin
 public class TimeCardController {
 
     @Autowired
     TimeCardRepository timeCardRepository;
 
-    @RequestMapping(value = "/timeCard", method = RequestMethod.GET)
+    @RequestMapping(value = "/timecard", method = RequestMethod.GET)
     public Iterable<TimeCard> getAllTimeCard(){
         return timeCardRepository.findAll();
     }
