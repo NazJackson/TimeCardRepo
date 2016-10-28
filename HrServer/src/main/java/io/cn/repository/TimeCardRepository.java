@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TimeCardRepository extends JpaRepository<TimeCard, Long> {
 
-    TimeCard findByEmail(String email);
+    TimeCard findById(Long id);
 }

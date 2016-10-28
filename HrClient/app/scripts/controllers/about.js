@@ -19,13 +19,13 @@ angular.module('hrClientApp')
       });
   $scope.delete = function(){
 
-     var emailAddress = prompt("Please enter an email of the timeCard you want to delete")
+     var idSpot = prompt("Please enter an ID of the timeCard you want to delete")
 
-          var email  = [{
-            'email': emailAddress
+          var id  = [{
+            'id': idSpot
           }];
-          console.log(email.email);
-          $http.delete("http://localhost:8080/timeCardEmail?email="+email[0].email);
+          console.log(id.id);
+          $http.delete("http://localhost:8080/timeCardId?id="+id[0].id);
 
     };
 

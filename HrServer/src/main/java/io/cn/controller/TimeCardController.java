@@ -27,10 +27,10 @@ public class TimeCardController {
         return timeCard;
     }
 
-    @RequestMapping(value = "/timeCardEmail", method = RequestMethod.DELETE)
-     public void delete(@RequestParam(name = "email") String email) {
-        System.out.println(email);
-       TimeCard timeCard = timeCardRepository.findByEmail(email);
+    @RequestMapping(value = "/timeCardId", method = RequestMethod.DELETE)
+     public void delete(@RequestParam(name = "id") Long id) {
+        System.out.println(id);
+        TimeCard timeCard = timeCardRepository.findById(id);
         System.out.println(timeCard);
         timeCardRepository.delete(timeCard);
 
