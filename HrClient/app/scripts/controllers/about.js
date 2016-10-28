@@ -17,4 +17,16 @@ angular.module('hrClientApp')
         console.log(response.data);
         $scope.responses = response.data;
       });
-  }]);
+  $scope.delete = function(){
+        prompt("Please enter an email of the timeCard you want to delete")
+
+            var email = {
+              "email": prompt.response
+            }
+
+            $http.delete("http://localhost:8080/timeCardEmail", email.email);
+
+          };
+
+
+}]);
