@@ -10,7 +10,7 @@
 angular.module('hrClientApp')
   .controller('AboutCtrl', ['$scope', '$http',
   function ($scope, $http){
-    $scope.response = [];
+    $scope.responses = [];
     $http.get("http://localhost:8080/timecard")
     .then(
       function(response){
@@ -18,15 +18,16 @@ angular.module('hrClientApp')
         $scope.responses = response.data;
       });
   $scope.delete = function(){
-        prompt("Please enter an email of the timeCard you want to delete")
 
-            var email = {
-              "email": prompt.response
-            }
+     var emailAddress = prompt("Please enter an email of the timeCard you want to delete")
 
-            $http.delete("http://localhost:8080/timeCardEmail", email.email);
+          var email  = [{
+            'email': emailAddress
+          }];
+          console.log(email.email);
+          $http.delete("http://localhost:8080/timeCardEmail?email="+email[0].email);
 
-          };
+    };
 
 
 }]);
